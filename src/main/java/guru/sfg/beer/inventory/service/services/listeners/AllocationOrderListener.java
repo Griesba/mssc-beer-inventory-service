@@ -36,6 +36,8 @@ public class AllocationOrderListener {
             } else {
                 allocationOrderResponseBuilder.pendingInventory(true);
             }
+
+            allocationOrderResponseBuilder.allocationError(false);
         }catch (Exception e){
             log.error("Inventory allocation failed for " + beerOrderDto.getId(), e.getMessage());
             allocationOrderResponseBuilder.allocationError(true);
